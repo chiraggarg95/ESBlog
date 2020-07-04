@@ -8,99 +8,48 @@
 html, body {
     margin: 0;
     padding: 0;
+    width: 100%;
     background: #6f42c122;
 }
 
-/*body::before {*/
-/*    content: ' ';*/
-/*    position: fixed;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    background: linear-gradient(#aaac, #aaac) fixed no-repeat, url("../images/background.jpg") fixed no-repeat center;*/
-/*    background-size: cover;*/
-/*    will-change: transform;*/
-/*    z-index: -10;*/
-/*}*/
-
 .popup {
-    z-index: 100;
+    z-index: 1001;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    perspective: 2000px;
-    perspective-origin: 51vw 50vh;
+    width: 100%;
+    height: 100%;
+    background: #000a;
     backdrop-filter: blur(5px);
+    padding: 5vh 10%;
+    opacity: 0;
     display: none;
+    transition: 0.5s opacity;
 }
 
 .card {
-    position: fixed;
-    width: 80vw;
-    height: 80vh;
-    margin: 10vh 10vw;
-    padding: 20px 30px;
-    background: #fffd;
-    border-radius: 20px;
-    backdrop-filter: blur(20px);
+    width: 80%;
+    height: 95vh;
+    margin-top: 95vh;
+    opacity: 0;
+    background: #fffa;
+    border-radius: 20px 20px 0 0;
+    overflow: auto;
     border-left: none;
     border-right: none;
     transition: all 0.3s;
-}
-
-.card::before {
-    content: '';
-    /*margin: -35px;*/
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: #fff8;
-    filter: blur(10px);
-    z-index: -1;
-}
-
-#card1 {
     z-index: 1001;
-    transform: scale(0, 0.05);
+    overflow-x: hidden;
+    box-shadow: 5px 20px 20px 1px #0004;
 }
 
-#card1.visible1 {
-    transform: scale(1, 0.05);
+.card::-webkit-scrollbar {
+    width: 0;
 }
 
-#card1.visible2 {
-    transform: scale(1, 1);
-}
-
-#card0 {
-    transform: scale(0, 0.05) translate(-50vw, 0) rotateY(+85deg);
-    filter: blur(5px);
-}
-
-#card2 {
-    transform: scale(0, 0.05) translate(50vw, 0) rotateY(-85deg);
-    filter: blur(5px);
-}
-
-#card0.visible1 {
-    transform: scale(1, 0.05) translate(-50vw, 0) rotateY(+85deg);
-}
-
-#card0.visible2 {
-    transform: scale(1, 1) translate(-50vw, 0) rotateY(+85deg);
-}
-
-#card2.visible1 {
-    transform: scale(1, 0.05) translate(50vw, 0) rotateY(-85deg);
-}
-
-#card2.visible2 {
-    transform: scale(1, 1) translate(50vw, 0) rotateY(-85deg);
+.card.visible2 {
+    margin-top: -3vh;
+    opacity: 1;
 }
 
 #main {
@@ -398,6 +347,69 @@ label.out {
 
 }
 
+.card1-title {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    padding-bottom: 20px;
+    width: 100%;
+    top: -20px;
+    font-size: 1.5em;
+    color: #6f42c1;
+    text-align: center;
+    margin-top: -20px;
+}
+
+.card1-title span {
+    display: inline-block;
+}
+
+span.button {
+    cursor: pointer;
+    transition: 0.25s transform;
+}
+
+span.button:hover {
+    transform: scale(1.2);
+}
+
+.card1-content {
+    margin: 10px 0;
+    padding: 0 5%;
+}
+
+.card1-content img {
+    display: block;
+    margin: 10px auto;
+    width: 40%;
+}
+
+.card1-content {
+    transition: opacity 0.5s;
+    opacity: 0;
+}
+
+.prompts ul {
+    list-style-type: none;
+}
+
+.prompts ul li {
+    padding-left: 10px;
+}
+
+.prompts ul li a {
+    text-decoration: none;
+    color: #062c33;
+    transition: 0.5s all;
+}
+
+.prompts ul li a:hover {
+    color: #0d6efd;
+}
+
 @media only screen and (max-width: 900px) {
     #main {
         grid-template-columns: auto auto;
@@ -410,5 +422,11 @@ label.out {
     }
     .grid-card {
         margin: 10px 20px;
+    }
+    .popup {
+        padding-left: 0;
+    }
+    .card {
+        width: 100vw;
     }
 }
