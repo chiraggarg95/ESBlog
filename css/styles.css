@@ -10,6 +10,7 @@ html, body {
     padding: 0;
     width: 100%;
     background: #6f42c122;
+    overflow-x: hidden;
 }
 
 .popup {
