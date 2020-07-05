@@ -52,7 +52,7 @@ body {
 }
 
 .card.visible2 {
-    margin-top: -3vh;
+    margin-top: 0;
     opacity: 1;
 }
 

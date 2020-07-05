@@ -1,10 +1,11 @@
 $(document).ready(function () {
 
     $(window).click(function () {
+        $('.card').removeClass('visible2');
         $('.popup').css('opacity', '0');
         setTimeout(function () {
             $('.popup').css('display', 'none');
-        }, 400)
+        }, 400);
     });
 
     $('.grid-card .card-title').click(function (e) {
