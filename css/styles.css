@@ -165,6 +165,7 @@ header {
 nav ul {
     list-style-type: none;
     display: initial;
+    box-sizing: border-box;
 }
 
 nav ul li {
