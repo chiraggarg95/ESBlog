@@ -296,7 +296,7 @@ label.out {
     nav ul {
         list-style-type: none;
         display: block;
-        position: fixed;
+        position: absolute;
         z-index: 1000;
         width: 100vw;
         height: 0;
