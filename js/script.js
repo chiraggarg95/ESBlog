@@ -9,6 +9,10 @@ $(document).ready(function () {
         }, 400);
     });
 
+    $('#previous, #next').click(function (e) {
+        e.stopPropagation();
+    });
+
     $('.grid-card').click(function (e) {
         e.stopPropagation();
         $('.popup').css('display', 'initial');
