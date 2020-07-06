@@ -3,14 +3,16 @@ $(document).ready(function () {
     $(window).click(function () {
         $('.card').removeClass('visible2');
         $('.popup').css('opacity', '0');
+        $('#navigation-bar').css('bottom', '-5vh');
         setTimeout(function () {
             $('.popup').css('display', 'none');
         }, 400);
     });
 
-    $('.grid-card .card-title').click(function (e) {
+    $('.grid-card').click(function (e) {
         e.stopPropagation();
         $('.popup').css('display', 'initial');
+        $('#navigation-bar').css('bottom', 0);
         setTimeout(function () {
             $('.popup').css('opacity', 1);
         }, 100);
