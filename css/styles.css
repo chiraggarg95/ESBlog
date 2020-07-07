@@ -37,7 +37,7 @@ body {
     height: 95vh;
     margin-top: 95vh;
     opacity: 0;
-    background: #fffa;
+    background: #fffc;
     border-radius: 20px 20px 0 0;
     overflow: auto;
     border-left: none;
@@ -204,7 +204,7 @@ form {
     text-align: center;
 }
 
-input[type='text'] {
+input[type='text'], textarea {
     transition: all 0.25s;
     height: 30px;
     border-radius: 15px;
@@ -214,8 +214,12 @@ input[type='text'] {
     padding: 0 5px;
 }
 
-input[type='text']:focus {
-    transform: scale(1.1);
+textarea {
+    height: auto;
+    resize: none;
+}
+
+input[type='text']:focus, textarea:focus {
     border: 1px solid #6f42c1;
     outline: none;
     background: #fff;
@@ -398,24 +402,6 @@ span.button:hover {
     opacity: 0;
 }
 
-.prompts ul {
-    list-style-type: none;
-}
-
-.prompts ul li {
-    padding-left: 10px;
-}
-
-.prompts ul li a {
-    text-decoration: none;
-    color: #062c33;
-    transition: 0.5s all;
-}
-
-.prompts ul li a:hover {
-    color: #0d6efd;
-}
-
 #navigation-bar {
     display: grid;
     position: fixed;
@@ -437,6 +423,59 @@ span.button:hover {
     cursor: pointer;
 }
 
+#comments {
+    position: relative;
+}
+
+.form-grid1 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.form-grid1 div, .form-grid2 div {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.form-grid2 {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.prompts input, .prompts textarea {
+    box-sizing: border-box;
+    width: 80%;
+}
+
+.prompts textarea {
+    width: calc(100% - 20% / 3);
+    padding: 5px;
+    height: auto;
+}
+
+.prompts label {
+    z-index: 1003;
+}
+
+#submit-button {
+    padding: 10px;
+}
+
+#submit-button input{
+    width: 100px;
+    height: 30px;
+    background-color: #6f42c1;
+    color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.25s;
+}
+
+#submit-button input:hover {
+    box-shadow: 2px 2px 2px 1px #0004;
+}
+
 @media only screen and (max-width: 900px) {
     #main {
         grid-template-columns: auto auto;
@@ -455,5 +494,8 @@ span.button:hover {
     }
     .card {
         width: 100vw;
+    }
+    .form-grid1 {
+        grid-template-columns: auto;
     }
 }
