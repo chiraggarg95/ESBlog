@@ -470,6 +470,7 @@ span.button:hover {
     cursor: pointer;
     border: none;
     transition: all 0.25s;
+    outline: none;
 }
 
 #submit-button input:hover {
