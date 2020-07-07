@@ -485,6 +485,9 @@ span.button:hover {
     #main {
         grid-template-columns: auto auto;
     }
+    .card1-content img {
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 650px) {
