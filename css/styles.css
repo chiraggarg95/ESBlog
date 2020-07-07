@@ -498,4 +498,7 @@ span.button:hover {
     .form-grid1 {
         grid-template-columns: auto;
     }
+    #comments textarea {
+        width: 80%;
+    }
 }
