@@ -473,6 +473,10 @@ span.button:hover {
     outline: none;
 }
 
+.card1-title {
+    z-index: 1010;
+}
+
 #submit-button input:hover {
     box-shadow: 2px 2px 2px 1px #0004;
 }
