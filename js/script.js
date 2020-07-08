@@ -3,7 +3,7 @@ $(document).ready(function () {
     $(window).click(function () {
         $('.card').removeClass('visible2');
         $('.popup').css('opacity', '0');
-        $('#navigation-bar').css('bottom', '-5vh');
+        $('#navigation-bar').css('top', '100vh');
         setTimeout(function () {
             $('.popup').css('display', 'none');
         }, 400);
@@ -16,7 +16,7 @@ $(document).ready(function () {
     $('.grid-card').click(function (e) {
         e.stopPropagation();
         $('.popup').css('display', 'initial');
-        $('#navigation-bar').css('bottom', 0);
+        $('#navigation-bar').css('top', '95vh');
         setTimeout(function () {
             $('.popup').css('opacity', 1);
         }, 100);
