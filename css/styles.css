@@ -406,7 +406,7 @@ span.button:hover {
     display: grid;
     position: fixed;
     z-index: 1002;
-    bottom: -5vh;
+    top: 100vh;
     width: 100vw;
     grid-template-columns: auto auto auto;
     transition: all 0.25s;
