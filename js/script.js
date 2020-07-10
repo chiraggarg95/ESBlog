@@ -13,7 +13,16 @@ $(document).ready(function () {
         e.stopPropagation();
     });
 
-    $('.grid-card').click(function (e) {
+    $('.grid-card').hover(function() {
+        $('.grid-card').each(function () {
+            $(this).css('filter', 'blur(2px)');
+        });
+        $(this).css('filter', 'none');
+    }, function () {
+        $('.grid-card').each(function () {
+            $(this).css('filter', 'none');
+        });
+    }).click(function (e) {
         e.stopPropagation();
         $('.popup').css('display', 'initial');
         $('#navigation-bar').css('top', '95vh');
